@@ -124,7 +124,7 @@ resource "aws_route_table_association" "bayer_private_1" {
   route_table_id = aws_route_table.bayer_private_rt.id
 }
 
-resource "aws_route_table_association" "bayer_private_1" {
+resource "aws_route_table_association" "bayer_private_2" {
   subnet_id      = aws_subnet.bayer_private_subnet_2.id
   route_table_id = aws_route_table.bayer_private_rt.id
 }
