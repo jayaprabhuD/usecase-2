@@ -18,6 +18,6 @@ module "alb" {
  source      = "./modules/alb"
 }
 
-modulesodule "rds" {
+module "rds" {
  source      = "./modules/rds"
 }
