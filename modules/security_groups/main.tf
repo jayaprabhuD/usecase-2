@@ -1,0 +1,40 @@
+# 1. Creating security group for ALB
+resource "aws_security_group" "bayer_alb_sg" {
+  name        = "bayer-alb-sg"
+  description = "Allow HTTP"
+  vpc_id      = aws_vpc.bayer_vpc.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# 2. Creating security group for Application Instances
+resource "aws_security_group" "bayer_app_sg" {
+  name   = "bayer-app-sg"
+  vpc_id = aws_vpc.bayer_vpc.id
+
+  ingress {
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
+    security_groups = [aws_security_group.bayer_alb_sg.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
