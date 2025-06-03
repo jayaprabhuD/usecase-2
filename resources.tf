@@ -23,8 +23,7 @@ module "alb" {
 
   alb_subnet_ids        = [module.bayer_vpc.public_subnet_1_id, module.bayer_vpc.public_subnet_2_id]
   alb_security_group_id = module.bayer_vpc.alb_sg_id
-  vpc_id                = module.bayer_vpc.vpc_id
-}
+ }
 
 module "rds" {
  source      = "./modules/rds"
