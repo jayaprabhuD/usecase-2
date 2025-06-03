@@ -51,7 +51,6 @@ module "instances_a" {
   subnet_id       = module.vpc.public_subnets[0]
   vpc_security_group_ids = [module.sg_group.ec2_security_group_id]
   user_data       = local.user_data_a
-  name            = "instance-a"
 }
 
 module "instances_b" {
