@@ -4,6 +4,7 @@ module "bayer_vpc" {
 
 module "security_groups" {
   source     = "./modules/security_groups"
+  vpc_id     = module.bayer_vpc.bayer_vpc_id
 
 }
 
