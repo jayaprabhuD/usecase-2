@@ -1,3 +1,3 @@
-variable "bayer_vpc_id" {
+variable "bayer_vpc" {
   type = string
 }
