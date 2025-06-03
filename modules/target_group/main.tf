@@ -4,7 +4,7 @@ resource "aws_lb_target_group" "bayer_tg" {
   name     = "bayer-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.bayer_vpc.id
+  vpc_id   = var.vpc_id
 
   health_check {
     path     = "/"

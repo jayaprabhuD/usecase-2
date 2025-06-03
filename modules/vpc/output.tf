@@ -13,3 +13,7 @@ output "alb_sg_id" {
 output "app_sg_id" {
   value = aws_security_group.bayer_app_sg.id
 }
+
+output "vpc_id" {
+  value = aws_vpc.bayer_vpc.id
+}
