@@ -9,3 +9,7 @@ variable "db_password" {
   type        = string
   default     = "hu975383jkup987"
 }
+
+variable "name" {
+  type = string
+}
