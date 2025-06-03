@@ -27,3 +27,8 @@ variable "db_backup_retention_period" {
   type        = number
   default     = 7
 }
+
+
+variable "rds_subnet_ids" {
+  type = list(string)
+}

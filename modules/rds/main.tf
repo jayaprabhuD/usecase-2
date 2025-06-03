@@ -2,9 +2,7 @@
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "Bayer-rds-subnet-group"
-  subnet_ids = [
-    aws_subnet.bayer_private_subnet_1.id,
-    aws_subnet.bayer_private_subnet_2.id
+  subnet_ids = ["var.rds_subnet_ids"]
   ]
 
   tags = {

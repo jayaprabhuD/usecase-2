@@ -28,4 +28,7 @@ module "alb" {
 
 module "rds" {
  source      = "./modules/rds"
+
+ rds_subnet_ids        = [module.bayer_vpc.private_subnet_1_id, module.bayer_vpc.private_subnet_2_id]
+
 }
