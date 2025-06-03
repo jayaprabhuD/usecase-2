@@ -4,11 +4,8 @@ resource "aws_lb" "bayer_alb" {
   name               = "bayer-alb-usecase-2"
   internal           = false
   load_balancer_type = "application"
-  security_groups = [aws_security_group.bayer_alb_sg.id]
-  subnets            = [
-    aws_subnet.bayer_public_subnet_1.id,
-    aws_subnet.bayer_public_subnet_2.id
-  ]
+  security_groups = [var.alb_security_group_id]
+  subnets            = var.alb_subnet_ids
 }
 
 # Creating Listener rule for front-end app
