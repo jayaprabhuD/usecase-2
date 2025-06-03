@@ -1,5 +1,6 @@
 module "vpc" {
   source = "./modules/vpc"
+  vpc_id = var.bayer_vpc_id
 }
 
 module "security_groups" {
