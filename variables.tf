@@ -11,5 +11,7 @@ variable "db_password" {
 }
 
 variable "name" {
-  type = string
+  description = "Name to be used on VPC created"
+  type        = string
+  default     = "admin" 
 }
