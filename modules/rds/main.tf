@@ -21,7 +21,7 @@ resource "aws_db_instance" "mysql" {
   username                = var.db_username
   password                = var.db_password
   db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
-  vpc_security_group_ids  = [aws_security_group.bayer_rds_sg.id]
+  vpc_security_group_ids  = ["var.rds_security_group_id"]
   skip_final_snapshot     = true
   publicly_accessible     = false
   multi_az                = false

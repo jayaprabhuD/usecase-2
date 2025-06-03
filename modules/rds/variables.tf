@@ -32,3 +32,7 @@ variable "db_backup_retention_period" {
 variable "rds_subnet_ids" {
   type = list(string)
 }
+
+variable "rds_security_group_id" {
+  type = list(string)
+}
