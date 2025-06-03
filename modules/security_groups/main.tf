@@ -2,7 +2,7 @@
 resource "aws_security_group" "bayer_alb_sg" {
   name        = "bayer-alb-sg"
   description = "Allow HTTP"
-  vpc_id      = aws_vpc.bayer_vpc.id
+  vpc_id      = var.bayer_vpc_id
 
   ingress {
     from_port   = 80

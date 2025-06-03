@@ -25,3 +25,8 @@ output "private_subnet_2_id" {
 output "rds_sg_id" {
   value = aws_security_group.bayer_rds_sg.id
 }
+
+
+output "bayer_vpc_id" {
+  value = aws_vpc.bayer_vpc.id
+}
