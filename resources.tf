@@ -1,4 +1,4 @@
-module "bayer_vpc" {
+module "bayer_vpc_id" {
   source = "./modules/vpc"
 }
 
