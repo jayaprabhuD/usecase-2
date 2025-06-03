@@ -3,5 +3,5 @@ variable "alb_subnet_ids" {
 }
 
 variable "alb_security_group_id" {
-  type = string
+  type = list(string)
 }

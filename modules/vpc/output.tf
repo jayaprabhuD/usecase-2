@@ -9,3 +9,7 @@ output "public_subnet_2_id" {
 output "alb_sg_id" {
   value = aws_security_group.bayer_alb_sg.id
 }
+
+output "app_sg_id" {
+  value = aws_security_group.bayer_app_sg.id
+}

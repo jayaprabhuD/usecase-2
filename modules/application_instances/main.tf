@@ -3,8 +3,8 @@
 resource "aws_instance" "bayer_frontend_app_1" {
   ami                    = "ami-0af9569868786b23a"
   instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.bayer_public_subnet_1.id
-  vpc_security_group_ids = [aws_security_group.bayer_app_sg.id]
+  subnet_id              = var.instance_1_subnet_id
+  vpc_security_group_ids = var.app_sg_id
   user_data              = <<-EOF
               #!/bin/bash
               dnf update -y
@@ -25,8 +25,8 @@ resource "aws_instance" "bayer_frontend_app_1" {
 resource "aws_instance" "bayer_frontend_app_2" {
   ami                    = "ami-0af9569868786b23a"
   instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.bayer_public_subnet_2.id
-  vpc_security_group_ids = [aws_security_group.bayer_app_sg.id]
+  subnet_id              = var.instance_2_subnet_id
+  vpc_security_group_ids = var.app_sg_id
   user_data              = <<-EOF
               #!/bin/bash
               dnf update -y
