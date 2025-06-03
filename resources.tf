@@ -9,8 +9,8 @@ module "security_groups" {
 module "application_instances" {
   source     = "./modules/application_instances"
  
-  instance_1_subnet_id = [module.bayer_vpc.public_subnet_1_id]
-  instance_2_subnet_id = [module.bayer_vpc.public_subnet_2_id]
+  instance_1_subnet_id = module.bayer_vpc.public_subnet_1_id
+  instance_2_subnet_id = module.bayer_vpc.public_subnet_2_id
   app_security_group_id = module.bayer_vpc.app_sg_id
 }
 
