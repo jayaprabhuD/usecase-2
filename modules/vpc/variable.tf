@@ -1,3 +1,3 @@
-variable "bayer_vpc" {
-  type = string
-}
+#variable "bayer_vpc" {
+#  type = string
+#}
