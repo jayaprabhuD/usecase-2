@@ -1,7 +1,7 @@
 # Creating RDS Subnet Group
 
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "Bayer-rds-subnet-group"
+  name       = "Bayer_rds_subnet_group"
   subnet_ids = var.rds_subnet_ids
 
   tags = {
