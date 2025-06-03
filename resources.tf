@@ -4,7 +4,7 @@ module "bayer_vpc" {
 
 module "security_groups" {
   source     = "./modules/security_groups"
-  bayer_vpc = module.bayer_vpc.bayer_vpc
+
 }
 
 module "application_instances" {
