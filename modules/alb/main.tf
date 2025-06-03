@@ -1,21 +1,21 @@
-# Creating Application Load Balancer
-
-resource "aws_lb" "bayer_alb" {
-  name               = "bayer-alb-usecase-2"
+resource "aws_lb" "app" {
+  name               = "app-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups = ["var.alb_security_group_id"]
-  subnets            = ["var.alb_subnet_ids"]
+  security_groups    = var.security_groups
+  subnets            = var.subnets
 }
 
-# Creating Listener rule for front-end app
-
 resource "aws_lb_listener" "http" {
-  load_balancer_arn = aws_lb.bayer_alb.arn
+  load_balancer_arn = aws_lb.app.arn
   port              = 80
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = var.target_group_arn
+    target_group_arn = var.tg_arns[0]
   }
+}
+
+output "alb_dns_name" {
+  value = aws_lb.app.dns_name
 }

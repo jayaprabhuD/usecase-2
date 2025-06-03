@@ -1,11 +1,15 @@
-variable "alb_subnet_ids" {
+variable "vpc_id" {
+  type = string
+}
+
+variable "subnets" {
   type = list(string)
 }
 
-variable "alb_security_group_id" {
+variable "tg_arns" {
   type = list(string)
 }
 
-variable "target_group_arn" {
-  type = list(string)
+variable "security_groups" {
+   type = list(string)
 }
